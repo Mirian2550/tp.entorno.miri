@@ -1,6 +1,4 @@
 FROM bash:4.4
-
-COPY . /tp-entorno
-WORKDIR tp-entorno
-
+COPY . /miri
+WORKDIR /miri
 CMD ["bash", "main.sh"]

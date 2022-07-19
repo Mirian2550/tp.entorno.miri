@@ -29,19 +29,19 @@ do
 
     case $OPCION in 
         1)
-        ./scripts/statsWords.sh
+        bash ./scripts/statsWords.sh
         ;;
         2)
-        ./scripts/statsUsageWords.sh
+        bash ./scripts/statsUsageWords.sh
         ;;
         3)
-        ./scripts/findNames.sh
+        bash ./scripts/findNames.sh
         ;;
         4)
-        ./scripts/statsSentences.sh
+        bash ./scripts/statsSentences.sh
         ;;
         5)
-        ./scripts/blankLinesCounter.sh
+        bash ./scripts/blankLinesCounter.sh
         ;;
     esac
 done
