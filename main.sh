@@ -11,6 +11,7 @@ do
     echo "4) statsSentences"
     echo "5) blankLinesCounter"
     echo "6) caseConverter"
+    echo "7) substringReplace"
     echo "0) salir"
     echo "Ingrese una opción: "
     NUMERO="^-?[0-9]+([.][0-9]+)?$"
@@ -18,13 +19,13 @@ do
         do 
         read -r OPCION
         if [[ $OPCION =~ $NUMERO ]]; then
-            if [[ "$OPCION" -ge 0 && "$OPCION" -le 6 ]];then
+            if [[ "$OPCION" -ge 0 && "$OPCION" -le 7 ]];then
                 break
             else
-                echo "ERROR INGRESE UN NÚMERO ENTERO ENTRE O Y 5"
+                echo "ERROR INGRESE UN NÚMERO ENTERO ENTRE O Y 7"
             fi
         else
-            echo "ERROR INGRESE UN NÚMERO ENTERO ENTRE 0 Y 5"
+            echo "ERROR INGRESE UN NÚMERO ENTERO ENTRE 0 Y 7"
         fi
     done
 
@@ -47,6 +48,10 @@ do
         6)
         bash ./scripts/caseConverter.sh
         ;;
+        7)
+        bash ./scripts/substringReplace.sh
+        ;;
+        
     esac
 done
 
