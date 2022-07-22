@@ -10,21 +10,22 @@ do
     echo "3) findNames"
     echo "4) statsSentences"
     echo "5) blankLinesCounter"
+    echo "6) caseConverter"
     echo "0) salir"
     echo "Ingrese una opción: "
     NUMERO="^-?[0-9]+([.][0-9]+)?$"
     while true
-    do 
-    read -r OPCION
-    if [[ $OPCION =~ $NUMERO ]]; then
-        if [[ "$OPCION" -ge 0 && "$OPCION" -le 5 ]];then
-            break
+        do 
+        read -r OPCION
+        if [[ $OPCION =~ $NUMERO ]]; then
+            if [[ "$OPCION" -ge 0 && "$OPCION" -le 6 ]];then
+                break
+            else
+                echo "ERROR INGRESE UN NÚMERO ENTERO ENTRE O Y 5"
+            fi
         else
-            echo "ERROR INGRESE UN NÚMERO ENTERO ENTRE O Y 5"
+            echo "ERROR INGRESE UN NÚMERO ENTERO ENTRE 0 Y 5"
         fi
-    else
-        echo "ERROR INGRESE UN NÚMERO ENTERO ENTRE 0 Y 5"
-    fi
     done
 
     case $OPCION in 
@@ -42,6 +43,9 @@ do
         ;;
         5)
         bash ./scripts/blankLinesCounter.sh
+        ;;
+        6)
+        bash ./scripts/caseConverter.sh
         ;;
     esac
 done

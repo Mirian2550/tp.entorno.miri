@@ -20,6 +20,6 @@ do
         TOTAL_LETRAS_ORACION=$((TOTAL_LETRAS_ORACION+${#PALABRAS[n]}))
 done
 
-echo "La oración más corta tiene: " $ORACION_CORTA
-echo "La oración más larga tiene: " $ORACION_LARGA
+echo "La oración más corta tiene: " "$ORACION_CORTA"
+echo "La oración más larga tiene: " "$ORACION_LARGA"
 echo "El promedio de longitud es: " $((TOTAL_LETRAS_ORACION/TOTAL_ORACIONES))
