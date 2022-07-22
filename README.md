@@ -1,5 +1,7 @@
 # tp.entorno.miri
 ### **Integrantes:**
+>Daniel Ponce
+>
 >Mirian Yañez
 
 ## Clone Repo
@@ -16,3 +18,16 @@ bash main.sh
 sudo docker build -t tp.entorno .
 sudo docker run -it --rm --name tp.entorno tp.entorno
 </pre>
+### checked sintaxis
+si estas en ubuntu o debian
+<pre>
+sudo apt install shellcheck
+</pre>
+Tests:
+<pre>
+cd tp.entorno.miri
+shellcheck scripts/*
+shellcheck main.sh
+</pre>
+### checked shell online
+online:[shellcheck] https://www.shellcheck.net/
