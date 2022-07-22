@@ -5,24 +5,24 @@ PAL_LARGA=0
 TOTAL_PAL=0
 TOTAL_LETRAS=0
 
-while IFS= read -r line
+while IFS= read -r LINEAS
 do
-    line=$(echo $line | tr "." " ")
-    line=$(echo $line | tr "," " ")
-    PAL=$(echo $line | tr " " "\n")
-    for p in $PAL
+    LINEAS=$(echo "$LINEAS" | tr "." " ")
+    LINEAS=$(echo "$LINEAS" | tr "," " ")
+    PALABRAS=$(echo "$LINEAS" | tr " " "\n")
+    for PALABRA in $PALABRAS
     do
-        if [ ${#p} -lt $PAL_CORTA ];then
-            PAL_CORTA=${#p}
+        if [ ${#PALABRA} -lt $PAL_CORTA ];then
+            PAL_CORTA=${#PALABRA}
         fi
-        if [ ${#p} -gt $PAL_LARGA ];then
-            PAL_LARGA=${#p}
+        if [ ${#PALABRA} -gt $PAL_LARGA ];then
+            PAL_LARGA=${#PALABRA}
         fi
         TOTAL_PAL=$((TOTAL_PAL+1))
-        TOTAL_LETRAS=$((TOTAL_LETRAS+${#p}))
+        TOTAL_LETRAS=$((TOTAL_LETRAS+${#PALABRA}))
     done
 done < demo.txt
 
-echo "La palabra más corta tiene: " $PAL_CORTA
-echo "La palabra más larga tiene: " $PAL_LARGA
+echo "La palabra más corta tiene: " "$PAL_CORTA"
+echo "La palabra más larga tiene: " "$PAL_LARGA"
 echo "El promedio de longitud es: " $((TOTAL_LETRAS/TOTAL_PAL))
