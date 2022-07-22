@@ -2,17 +2,17 @@
 echo "ingresaste en findNames"
 
 NOMBRE="^[A-Z]+[a-z]+[a-z]*"
-while IFS= read -r line
+while IFS= read -r LINEA
 do
-    line=$(echo $line | tr "." " ")
-    line=$(echo $line | tr "," " ")
-    line=$(echo $line | tr "" " ")
-    line=$(echo $line | tr "?" " ")
-    PAL=$(echo $line | tr " " "\n")
-    for p in $PAL
+    LINEA=$(echo "$LINEA" | tr "." " ")
+    LINEA=$(echo "$LINEA" | tr "," " ")
+    LINEA=$(echo "$LINEA" | tr "" " ")
+    LINEA=$(echo "$LINEA" | tr "?" " ")
+    PALABRAS=$(echo "$LINEA" | tr " " "\n")
+    for PALABRA in $PALABRAS
     do
-        if [[ $p =~ $NOMBRE ]]; then
-            echo "Nombre: $p"
+        if [[ $PALABRA =~ $NOMBRE ]]; then
+            echo "Nombre: " "$PALABRA"
         fi
     done
 done < demo.txt

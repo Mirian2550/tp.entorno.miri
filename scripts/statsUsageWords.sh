@@ -3,21 +3,21 @@ echo "ingresaste en statsUsageWords"
 
 declare -A DIC_PAL
 
-while IFS= read -r line
+while IFS= read -r LINEAS
 do
-line=$(echo $line | tr "." " ")
-line=$(echo $line | tr "," " ")
-line=$(echo $line | tr ";" " ")
-line=$(echo $line | tr "¿" " ")
-line=$(echo $line | tr "?" " ")
-line=$(echo $line | tr " " "\n")
-for p in $line
+LINEAS=$(echo "$LINEAS" | tr "." " ")
+LINEAS=$(echo "$LINEAS" | tr "," " ")
+LINEAS=$(echo "$LINEAS" | tr ";" " ")
+LINEAS=$(echo "$LINEAS" | tr "¿" " ")
+LINEAS=$(echo "$LINEAS" | tr "?" " ")
+LINEAS=$(echo "$LINEAS" | tr " " "\n")
+for PALABRA in $LINEAS
     do
-        if [ ${#p} -ge 4 ];then
-            if [[ -v DIC_PAL[$p] ]];then
-                DIC_PAL[$p]=$((DIC_PAL[$p]+1))
+        if [ ${#PALABRA} -ge 4 ];then
+            if [[ -v DIC_PAL[$PALABRA] ]];then
+                DIC_PAL[$PALABRA]=$((DIC_PAL[$PALABRA]+1))
             else
-                DIC_PAL[$p]=1
+                DIC_PAL[$PALABRA]=1
             fi
         fi
     done
