@@ -27,7 +27,7 @@ sudo apt install shellcheck
 Tests:
 <pre>
 cd tp.entorno.miri
-shellcheck src/*
+shellcheck scripts/*
 shellcheck main.sh
 </pre>
 ### checked shell online
